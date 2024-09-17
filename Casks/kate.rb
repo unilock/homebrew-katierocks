@@ -4,15 +4,15 @@ cask "kate" do
 
   url do
     require "open-uri"
-    base_url = "https://binary-factory.kde.org/view/MacOS/job/Kate_Release_macos/lastStableBuild"
+    base_url = "https://cdn.kde.org/ci-builds/utilities/kate/master/macos-arm64/"
     version = URI(base_url.to_s)
               .open
               .read
-              .scan(/href=.*?kate[._-]v?(\d+(?:[.-]\d+)+)-macos-clang-x86_64\.dmg/i)
+              .scan(/href="kate-(.*?)-macos-clang-arm64\.dmg"/i)
               .flatten
               .first # should only be one match
-    file = "kate-#{version}-macos-clang-x86_64.dmg"
-    "#{base_url}/artifact/#{file}"
+    file = "kate-#{version}-macos-clang-arm64.dmg"
+    "#{base_url}#{file}"
   end
   name "Kate"
   desc "Get an Edge in Editing"

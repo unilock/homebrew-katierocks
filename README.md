@@ -1,4 +1,3 @@
-# homebrew-kate
-personal homebrew tap
+# homebrew-unilock
 
-(not to be confused with the text editor)
+personal homebrew tap
